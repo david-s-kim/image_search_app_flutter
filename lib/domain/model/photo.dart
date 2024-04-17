@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'photo.freezed.dart';
+
 part 'photo.g.dart';
 
 @freezed
@@ -12,8 +13,5 @@ class Photo with _$Photo {
     required String tags,
   }) = _Photo;
 
-
-
-  factory Photo.fromJson(Map<String, dynamic> json) =>
-      _$PhotoFromJson(json);
+  factory Photo.fromJson(Map<String, dynamic> json) => _$PhotoFromJson(json);
 }
