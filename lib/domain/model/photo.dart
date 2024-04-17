@@ -11,6 +11,7 @@ class Photo with _$Photo {
     required int id,
     required String url,
     required String tags,
+    required int views,
   }) = _Photo;
 
   factory Photo.fromJson(Map<String, dynamic> json) => _$PhotoFromJson(json);

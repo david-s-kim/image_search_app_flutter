@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:image_search_app_flutter/data/data_source/photo_data_source.dart';
 import 'package:image_search_app_flutter/data/repository/photo_repository_impl.dart';
+import 'package:image_search_app_flutter/domain/model/photo.dart';
+import 'package:image_search_app_flutter/domain/use_case/get_photos_use_case.dart';
 import 'package:image_search_app_flutter/presentation/search_list/search_list_view_model.dart';
 import 'package:provider/provider.dart';
 
@@ -24,8 +26,10 @@ class MyApp extends StatelessWidget {
       ),
       home: ChangeNotifierProvider(
         create: (_) => SearchListViewModel(
-          photoRepository: PhotoRepositoryImpl(
-            photoDataSource: PhotoDataSource(),
+          getPhotosUseCase: GetPhotosUseCase(
+            PhotoRepositoryImpl(
+              photoDataSource: PhotoDataSource(),
+            ),
           ),
         ),
         child: const SearchListScreen(),

@@ -9,12 +9,16 @@ class ImageCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(20),
-      child: Image.network(
-        photo.url,
-        fit: BoxFit.cover,
+    return Column(
+        children: [
+      ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Image.network(
+          photo.url,
+          fit: BoxFit.cover,
+        ),
       ),
-    );
+          Text('조회수: ${photo.views.toString()}회'),
+    ]);
   }
 }
