@@ -28,6 +28,7 @@ class _SearchListScreenState extends State<SearchListScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('이미지 검색하기'),
+        backgroundColor: Colors.blue,
       ),
       body: Column(
         children: [
@@ -43,6 +44,9 @@ class _SearchListScreenState extends State<SearchListScreen> {
                   onPressed: () {
                     final query = _queryTextEditingController.text;
                     viewModel.onSearch(query);
+
+                    // 현재 포커스된 TextField의 키보드를 내립니다.
+                    FocusScope.of(context).unfocus();
                   },
                 ),
               ),
