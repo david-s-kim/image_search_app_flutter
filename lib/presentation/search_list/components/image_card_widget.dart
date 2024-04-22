@@ -18,7 +18,7 @@ class ImageCardWidget extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
-          Text('조회수: ${photo.views.toString()}회'),
+          Text('조회수: ${photo.views.toString()}회', style: TextStyle(fontSize: 18),),
     ]);
   }
 }
